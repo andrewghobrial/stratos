@@ -49,11 +49,11 @@ import {
         animate('350ms ease-out', style({ opacity: '1', transform: 'translateY(0)' }))
       ]),
       transition('* => left, * => repeatLeft', [
-        style({ opacity: '0', transform: 'translateX(-20px)' }),
+        style({ opacity: '0', transform: 'translateX(-2%)' }),
         animate('350ms ease-out', style({ opacity: '1', transform: 'translateX(0)' })),
       ]),
       transition('* => right, * => repeatRight', [
-        style({ opacity: '0', transform: 'translateX(20px)' }),
+        style({ opacity: '0', transform: 'translateX(2%)' }),
         animate('350ms ease-out', style({ opacity: '1', transform: 'translateX(0)' })),
       ])
     ])
@@ -161,8 +161,7 @@ export class ListComponent<T> implements OnInit, OnDestroy, AfterViewInit {
         this.multiActions && this.multiActions.length ||
         viewType === 'cards' && this.sortColumns && this.sortColumns.length ||
         this.multiFilterConfigs && this.multiFilterConfigs.length ||
-        this.config.enableTextFilter ||
-        this.dataSource.refresh
+        this.config.enableTextFilter
       );
     });
 
@@ -243,7 +242,7 @@ export class ListComponent<T> implements OnInit, OnDestroy, AfterViewInit {
 
     const filterStoreToWidget = this.paginationController.filter$.do((filter: ListFilter) => {
       this.filterString = filter.string;
-      this.multiFilters = filter.items;
+      this.multiFilters = { ...filter.items };
     });
 
     // Multi filters (e.g. cf/org/space)
@@ -358,7 +357,6 @@ export class ListComponent<T> implements OnInit, OnDestroy, AfterViewInit {
       startWith(true),
       withLatestFrom(canShowLoading$),
       map(([loading, canShowLoading]) => {
-        console.log(canShowLoading);
         return canShowLoading && loading;
       }),
       distinctUntilChanged()
@@ -367,7 +365,6 @@ export class ListComponent<T> implements OnInit, OnDestroy, AfterViewInit {
     this.isRefreshing$ = this.dataSource.isLoadingPage$.pipe(
       withLatestFrom(canShowLoading$),
       map(([loading, canShowLoading]) => {
-        console.log(canShowLoading);
         return !canShowLoading && loading;
       }),
       distinctUntilChanged()
