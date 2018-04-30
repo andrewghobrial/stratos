@@ -9,7 +9,6 @@ import { RouterNav } from '../../../../../store/actions/router.actions';
 import { DeleteServiceBinding, DeleteServiceInstance } from '../../../../../store/actions/service-instances.actions';
 import { AppState } from '../../../../../store/app-state';
 import { APIResource } from '../../../../../store/types/api.types';
-import { CfServiceInstance } from '../../../../../store/types/service.types';
 import { ITableColumn } from '../../list-table/table.types';
 import { IListAction, IListConfig, ListConfig, ListViewTypes } from '../../list.component.types';
 import { CfSpacesServiceInstancesDataSource } from './cf-spaces-service-instances-data-source';
