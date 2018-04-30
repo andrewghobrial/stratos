@@ -49,6 +49,7 @@ import { EndpointsMissingComponent } from './components/endpoints-missing/endpoi
 import { EnvVarViewComponent } from './components/env-var-view/env-var-view.component';
 import { FileInputComponent } from './components/file-input/file-input.component';
 import { FocusDirective } from './components/focus.directive';
+import { GithubCommitAuthorComponent } from './components/github-commit-author/github-commit-author.component';
 import { IntroScreenComponent } from './components/intro-screen/intro-screen.component';
 import { listCardComponents } from './components/list/list-cards/card.types';
 import {
@@ -84,6 +85,7 @@ import { TileGroupComponent } from './components/tile/tile-group/tile-group.comp
 import { TileComponent } from './components/tile/tile/tile.component';
 import { UniqueDirective } from './components/unique.directive';
 import { UsageGaugeComponent } from './components/usage-gauge/usage-gauge.component';
+import { UserProfileBannerComponent } from './components/user-profile-banner/user-profile-banner.component';
 import { CfOrgSpaceDataService } from './data-services/cf-org-space-service.service';
 import { CfUserService } from './data-services/cf-user.service';
 import { CloudFoundryService } from './data-services/cloud-foundry.service';
@@ -95,7 +97,6 @@ import { PercentagePipe } from './pipes/percentage.pipe';
 import { UptimePipe } from './pipes/uptime.pipe';
 import { UsageBytesPipe } from './pipes/usage-bytes.pipe';
 import { ValuesPipe } from './pipes/values.pipe';
-import { UserProfileBannerComponent } from './components/user-profile-banner/user-profile-banner.component';
 
 @NgModule({
   imports: [
@@ -176,6 +177,7 @@ import { UserProfileBannerComponent } from './components/user-profile-banner/use
     IntroScreenComponent,
     CliInfoComponent,
     CliCommandComponent,
+    GithubCommitAuthorComponent,
     UserProfileBannerComponent
   ],
   exports: [
@@ -241,7 +243,8 @@ import { UserProfileBannerComponent } from './components/user-profile-banner/use
     IntroScreenComponent,
     UserProfileBannerComponent,
     CliInfoComponent,
-    CliCommandComponent
+    CliCommandComponent,
+    GithubCommitAuthorComponent
   ],
   entryComponents: [
     AppEventDetailDialogComponentComponent,
