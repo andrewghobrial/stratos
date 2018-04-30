@@ -21648,6 +21648,12 @@ const testInitialStoreState: AppState = {
   },
   internalEvents: {
     types: {}
+  },
+  createServiceInstance: {
+    name: '',
+  servicePlanGuid: '',
+  spaceGuid: '',
+  orgGuid: ''
   }
 };
 /* tslint:enable */
