@@ -21,6 +21,10 @@ RUN bower install --allow-root \
 RUN CERTS_PATH=./dev-certs ./generate_cert.sh \
     && chmod +x portal-proxy
 
-EXPOSE 4443
+EXPOSE 443
+
+USER root
 
 ENTRYPOINT ["./portal-proxy"]
+
+# Remember to hide build/dev_config.json
